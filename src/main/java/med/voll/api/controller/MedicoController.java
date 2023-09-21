@@ -57,11 +57,11 @@ public class MedicoController {
         return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
     }
 
-//    *** HARD DELETE ***
-//    @DeleteMapping("/{id}")
-//    @Transactional
-//    public void excluir(@PathVariable Long id) {
-//        repository.deleteById(id);
-//    }
+    /*   *** HARD DELETE ***
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id) {
+        repository.deleteById(id);
+    }  */
 
 }
