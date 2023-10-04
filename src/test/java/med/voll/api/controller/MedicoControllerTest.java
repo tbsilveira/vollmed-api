@@ -39,7 +39,7 @@ class MedicoControllerTest {
     private MedicoRepository repository;
 
     @Test
-    @DisplayName("Deveria devolver código http 400 quando informações estão inválidas")
+    @DisplayName("Deveria devolver código http 400 qquando informações de cadastro de médico estão inválidas")
     @WithMockUser
     void cadastrar_cenario1() throws Exception {
         var response = mvc.perform(post("/medicos"))
@@ -50,7 +50,7 @@ class MedicoControllerTest {
 
 
     @Test
-    @DisplayName("Deveria devolver código http 200 quando informações são válidas")
+    @DisplayName("Deveria devolver código http 200 quando informações de cadastro de médico estão válidas")
     @WithMockUser
     void cadastrar_cenario2() throws Exception {
         var dadosCadastro = new DadosCadastroMedico("Medico","medico@email.com", "000111222", "111222", Especialidade.CARDIOLOGIA, dadosEndereco());
@@ -79,8 +79,6 @@ class MedicoControllerTest {
         assertThat(response.getStatus()).isEqualTo(HttpStatus.CREATED.value());
         assertThat(response.getContentAsString()).isEqualTo(jsonEsperado);
     }
-
-
 
     private DadosEndereco dadosEndereco() {
         return new DadosEndereco("Rua XPTO", "Bairro", "00011122", "San Francisco", "CA", null, null );
